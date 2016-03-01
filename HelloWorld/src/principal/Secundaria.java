@@ -1,7 +1,10 @@
 package principal;
 
-public class Secundaria {
+import gorgon.gorgon;
+
+public class Secundaria extends gorgon {
 	public Secundaria(){
+		super();
 		System.out.println("Secundaria");
 	}
 	public void go(){
