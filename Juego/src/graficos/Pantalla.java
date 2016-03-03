@@ -35,7 +35,7 @@ public final class Pantalla {
 					continue;
 				}
 				//Temporal
-				pixeles[posicionX + posicionY * ancho] =Sprite.asfalto.pixeles[(x & MASCARA_SPRITE)+ (y & MASCARA_SPRITE) * LADO_SPRITE]; 
+				pixeles[posicionX + posicionY * ancho] =Sprite.ASFALTO.pixeles[(x & MASCARA_SPRITE)+ (y & MASCARA_SPRITE) * LADO_SPRITE]; 
 			}																																																																																																																																																																																											 
 		}
 	}
