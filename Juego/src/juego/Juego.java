@@ -17,8 +17,8 @@ import control.Teclado;
 
 public class Juego extends Canvas implements Runnable{
 	private static final long serialVersionUID = 1L;
-	public static final int ANCHO=800;
-	public static final int ALTO=600;
+	public static final int ANCHO=800-500;
+	public static final int ALTO=600-500;
 	private static volatile boolean enFuncionamiento=false;
 	private static final String NOMBRE= "Juego";
 	private static int aps=0;
