@@ -1,11 +1,12 @@
 package mapa;
 
+import mapa.cuadro.Cuadro;
 import graficos.Pantalla;
 
 public abstract class Mapa {
-	private int ancho;
-	private int alto;
-	private int[] cuadros;
+	protected int ancho;
+	protected int alto;
+	protected int[] cuadros;
 	
 	public Mapa(int ancho, int alto){
 		this.alto=alto;
@@ -18,7 +19,7 @@ public abstract class Mapa {
 		cargarMapa(ruta);
 	}
 	
-	private void generarMapa(){
+	protected void generarMapa(){
 		
 	}
 	
@@ -30,7 +31,32 @@ public abstract class Mapa {
 		
 	}
 	
-	public void mostrar(int compensacionX, int compensacionY, Pantalla pantalla){
+	public void mostrar(final int compensacionX, final int compensacionY, final Pantalla pantalla){
+		//int oeste = compensacionX / 32;
+		pantalla.estableceDiferencia(compensacionX, compensacionY);
 		
+		int oeste = compensacionX >> 5;
+		int este = (compensacionX + pantalla.obteneAncho() + Cuadro.LADO) >> 5;
+		int norte= compensacionY >> 5;
+		int sur= (compensacionY + pantalla.obteneAlto() + Cuadro.LADO) >> 5;
+		
+		for(int y=norte; y<sur; y ++){
+			for(int x=oeste; x<este; x++){
+				obtenCuadro(x, y).mostrar(x, y, pantalla);
+			}
+		}
+	}
+	
+	public Cuadro obtenCuadro(final int x, final int y){
+		if(x<0 || y <0 || x>=ancho || y>=alto){
+			return Cuadro.VACIO;
+		}
+		
+		switch(cuadros[x + y * ancho]){
+			case 0:
+				return Cuadro.ASFALTO;
+			default:
+				return Cuadro.VACIO;
+		}
 	}
 }
