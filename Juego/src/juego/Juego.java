@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 
 import mapa.Mapa;
 import mapa.MapaGenerado;
+import mapa.MapaCargado;
 
 import control.Teclado;
 
@@ -50,7 +51,8 @@ public class Juego extends Canvas implements Runnable{
 		
 		pantalla = new Pantalla(ANCHO, ALTO);
 		
-		mapa=new MapaGenerado(128, 128);
+		//mapa=new MapaGenerado(128, 128);
+		mapa=new MapaCargado("/Mapas/MapaDesierto.png");
 		
 		teclado = new Teclado();
 		addKeyListener(teclado);
@@ -121,7 +123,7 @@ public class Juego extends Canvas implements Runnable{
 			return;
 		}
 		
-		pantalla.limpiar();
+		//pantalla.limpiar();
 		mapa.mostrar(x, y, pantalla);
 //		pantalla.mostrar(x, y);
 		
