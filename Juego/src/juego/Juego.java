@@ -21,16 +21,16 @@ import control.Teclado;
 
 public class Juego extends Canvas implements Runnable{
 	private static final long serialVersionUID = 1L;
-	public static final int ANCHO=800;
-	public static final int ALTO=600;
-	private static volatile boolean enFuncionamiento=false;
-	private static final String NOMBRE= "Juego";
+	public static final int ANCHO = 800;
+	public static final int ALTO = 600;
+	private static volatile boolean enFuncionamiento = false;
+	private static final String NOMBRE = "Juego";
 	
-	private static String CONTADOR_APS="";
-	private static String CONTADOR_FPS="";
+	private static String CONTADOR_APS = "";
+	private static String CONTADOR_FPS = "";
 	
-	private static int aps=0;
-	private static int fps=0;
+	private static int aps = 0;
+	private static int fps = 0;
 	private static int x = 0;
 	private static int y = 0;
 	
@@ -75,13 +75,13 @@ public class Juego extends Canvas implements Runnable{
 	}
 	
 	private synchronized void iniciar(){
-		enFuncionamiento=true;
+		enFuncionamiento = true;
 		thread= new Thread(this, "Graficos");
 		thread.start();
 	}
 	
 	private synchronized void detener(){
-		enFuncionamiento=false;
+		enFuncionamiento = false;
 		try {
 			thread.join();
 		} catch (InterruptedException e) {
