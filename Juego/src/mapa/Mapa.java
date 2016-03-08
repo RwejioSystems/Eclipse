@@ -11,8 +11,8 @@ public abstract class Mapa {
 	protected Cuadro[] cuadrosCatalogo;
 	
 	public Mapa(int ancho, int alto){
-		this.alto=alto;
-		this.ancho= ancho;
+		this.alto = alto;
+		this.ancho = ancho;
 		cuadros = new int[ancho*alto];
 		generarMapa();
 	}

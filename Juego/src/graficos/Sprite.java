@@ -58,7 +58,7 @@ public final class Sprite {
 	}
 	
 	private void cargarSprite(int version){
-		if(version==0){
+		if(version == 0){
 			cargaNormal();
 		}else{
 			cargaManipulada(version);

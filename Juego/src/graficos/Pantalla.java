@@ -23,20 +23,20 @@ public final class Pantalla {
 	}
 	
 	public void estableceDiferencia(final int diferenciaX, final int diferenciaY){
-		this.diferenciaX=diferenciaX;
-		this.diferenciaY=diferenciaY;
+		this.diferenciaX = diferenciaX;
+		this.diferenciaY = diferenciaY;
 	}
 	
 	public Pantalla(final int ancho, final int alto){
-		this.ancho= ancho;
-		this.alto= alto;
+		this.ancho = ancho;
+		this.alto = alto;
 		
 		pixeles= new int[ancho * alto];
 	}
 	
 	public void limpiar(){
 		for(int i=0; i< pixeles.length; i++){
-			pixeles[i]=0;
+			pixeles[i] = 0;
 		}
 	}
 //	/*TEMPORAL*/

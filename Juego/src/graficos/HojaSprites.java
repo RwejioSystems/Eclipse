@@ -11,7 +11,7 @@ public class HojaSprites {
 	public final int pixeles[];
 	
 	//coleccion de hojas de sprites
-	public static HojaSprites desierto= new HojaSprites("/texturas/desierto.png", 320, 320);
+	public static HojaSprites desierto = new HojaSprites("/texturas/desierto.png", 320, 320);
 	// fin de la coleccion
 	
 	public int obenerAncho(){
@@ -19,9 +19,9 @@ public class HojaSprites {
 	}
 	
 	public HojaSprites(final String ruta, final int ancho, final int alto){
-		this.alto=alto;
-		this.ancho=ancho;
-		pixeles= new int[ancho * alto];
+		this.alto = alto;
+		this.ancho = ancho;
+		pixeles = new int[ancho * alto];
 		
 		BufferedImage imagen;
 		try{
