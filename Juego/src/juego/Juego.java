@@ -24,8 +24,10 @@ import control.Teclado;
 
 public class Juego extends Canvas implements Runnable{
 	private static final long serialVersionUID = 1L;
-	public static final int ANCHO = 800;
-	public static final int ALTO = 600;
+	//public static final int ANCHO = 800;
+	//public static final int ALTO = 600;
+	public static final int ANCHO = 100;
+	public static final int ALTO = 100;
 	private static volatile boolean enFuncionamiento = false;
 	private static final String NOMBRE = "Juego";
 	
@@ -62,11 +64,12 @@ public class Juego extends Canvas implements Runnable{
 		
 		//mapa=new MapaCargado("/Mapas/MapaDesierto.png");
 		mapa=new MapaCargado("/Mapas/MapaLaberinto.png");
-		jugador = new Jugador(teclado, Sprite.ABAJO0, 415, 576);
+		jugador = new Jugador(mapa, teclado, Sprite.ABAJO0, 415, 576);
+		
 		
 		ventana= new JFrame(NOMBRE);
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		ventana.setUndecorated(true);
+		//ventana.setUndecorated(true);
 		ventana.setResizable(false);
 		ventana.setIconImage(icono.getImage());
 		ventana.setLayout(new BorderLayout());

@@ -10,9 +10,10 @@ public class Cuadro {
 	
 	public Sprite sprite;
 	public static final int LADO=32;
+	private boolean solido;
 	//Coleccion de cuadros
 		//Cuadros mapa Desierto
-			public static final Cuadro VACIO = new Cuadro(Sprite.VACIO);
+			public static final Cuadro VACIO = new Cuadro(Sprite.VACIO, true);
 			public static final Cuadro ASFALTO=new Cuadro(Sprite.ASFALTO);
 			public static final Cuadro ARENA = new Cuadro(Sprite.ARENA);
 			public static final Cuadro BORDE_CARRETERA = new Cuadro(Sprite.BORDE_CARRETERA);
@@ -36,34 +37,41 @@ public class Cuadro {
 		
 		//CONJUNTO DE CUADROS DE LABERINTO
 			public static final Cuadro PISO_LABERINTO = new Cuadro(Sprite.PISO_LABERINTO);
-			public static final Cuadro PARED_LADRILLO_HORIZONTAL = new Cuadro(Sprite.PARED_LADRILLO_HORIZONTAL);
-			public static final Cuadro PARED_LADRILLO_HORIZONTAL_INVERTIDO = new Cuadro(Sprite.PARED_LADRILLO_HORIZONTAL_INVERTIDO);
-			public static final Cuadro PARED_LADRILLO_VERTICAL = new Cuadro(Sprite.PARED_LADRILLO_VERTICAL);
-			public static final Cuadro PARED_LADRILLO_VERTICAL_INVERTIDO = new Cuadro(Sprite.PARED_LADRILLO_VERTICAL_INVERTIDO);
-			public static final Cuadro PARED_LADRILLO_PISO_HORIZONTAL = new Cuadro(Sprite.PARED_LADRILLO_PISO_HORIZONTAL);
-			public static final Cuadro PARED_LADRILLO_PISO_HORIZONTAL_INVERTIDO = new Cuadro(Sprite.PARED_LADRILLO_PISO_HORIZONTAL_INVERTIDO);
-			public static final Cuadro PARED_LADRILLO_PISO_VERTICAL = new Cuadro(Sprite.PARED_LADRILLO_PISO_VERTICAL);
-			public static final Cuadro PARED_LADRILLO_PISO_VERTICAL_INVERTIDO = new Cuadro(Sprite.PARED_LADRILLO_PISO_VERTICAL_INVERTIDO);
+			public static final Cuadro PARED_LADRILLO_HORIZONTAL = new Cuadro(Sprite.PARED_LADRILLO_HORIZONTAL, true);
+			public static final Cuadro PARED_LADRILLO_HORIZONTAL_INVERTIDO = new Cuadro(Sprite.PARED_LADRILLO_HORIZONTAL_INVERTIDO, true);
+			public static final Cuadro PARED_LADRILLO_VERTICAL = new Cuadro(Sprite.PARED_LADRILLO_VERTICAL, true);
+			public static final Cuadro PARED_LADRILLO_VERTICAL_INVERTIDO = new Cuadro(Sprite.PARED_LADRILLO_VERTICAL_INVERTIDO, true);
+			public static final Cuadro PARED_LADRILLO_PISO_HORIZONTAL = new Cuadro(Sprite.PARED_LADRILLO_PISO_HORIZONTAL, true);
+			public static final Cuadro PARED_LADRILLO_PISO_HORIZONTAL_INVERTIDO = new Cuadro(Sprite.PARED_LADRILLO_PISO_HORIZONTAL_INVERTIDO, true);
+			public static final Cuadro PARED_LADRILLO_PISO_VERTICAL = new Cuadro(Sprite.PARED_LADRILLO_PISO_VERTICAL, true);
+			public static final Cuadro PARED_LADRILLO_PISO_VERTICAL_INVERTIDO = new Cuadro(Sprite.PARED_LADRILLO_PISO_VERTICAL_INVERTIDO, true);
 			
-			public static final Cuadro ESQUINA_PARED_LADRILLO_PISO_SUP_IZQ = new Cuadro(Sprite.ESQUINA_PARED_LADRILLO_PISO_SUP_IZQ);
-			public static final Cuadro ESQUINA_PARED_LADRILLO_PISO_SUP_DER = new Cuadro(Sprite.ESQUINA_PARED_LADRILLO_PISO_SUP_DER);
-			public static final Cuadro ESQUINA_PARED_LADRILLO_PISO_INF_DER = new Cuadro(Sprite.ESQUINA_PARED_LADRILLO_PISO_INF_DER);
-			public static final Cuadro ESQUINA_PARED_LADRILLO_PISO_INF_IZQ = new Cuadro(Sprite.ESQUINA_PARED_LADRILLO_PISO_INF_IZQ);
+			public static final Cuadro ESQUINA_PARED_LADRILLO_PISO_SUP_IZQ = new Cuadro(Sprite.ESQUINA_PARED_LADRILLO_PISO_SUP_IZQ, true);
+			public static final Cuadro ESQUINA_PARED_LADRILLO_PISO_SUP_DER = new Cuadro(Sprite.ESQUINA_PARED_LADRILLO_PISO_SUP_DER, true);
+			public static final Cuadro ESQUINA_PARED_LADRILLO_PISO_INF_DER = new Cuadro(Sprite.ESQUINA_PARED_LADRILLO_PISO_INF_DER, true);
+			public static final Cuadro ESQUINA_PARED_LADRILLO_PISO_INF_IZQ = new Cuadro(Sprite.ESQUINA_PARED_LADRILLO_PISO_INF_IZQ, true);
 			
-			public static final Cuadro ESQUINA_ABIERTA_PARED_LADRILLO_SUP_DER = new Cuadro(Sprite.ESQUINA_ABIERTA_PARED_LADRILLO_SUP_DER);
-			public static final Cuadro ESQUINA_ABIERTA_PARED_LADRILLO_SUP_IZQ = new Cuadro(Sprite.ESQUINA_ABIERTA_PARED_LADRILLO_SUP_IZQ);
-			public static final Cuadro ESQUINA_ABIERTA_PARED_LADRILLO_INF_DER = new Cuadro(Sprite.ESQUINA_ABIERTA_PARED_LADRILLO_INF_DER);
-			public static final Cuadro ESQUINA_ABIERTA_PARED_LADRILLO_INF_IZQ = new Cuadro(Sprite.ESQUINA_ABIERTA_PARED_LADRILLO_INF_IZQ);
+			public static final Cuadro ESQUINA_ABIERTA_PARED_LADRILLO_SUP_DER = new Cuadro(Sprite.ESQUINA_ABIERTA_PARED_LADRILLO_SUP_DER, true);
+			public static final Cuadro ESQUINA_ABIERTA_PARED_LADRILLO_SUP_IZQ = new Cuadro(Sprite.ESQUINA_ABIERTA_PARED_LADRILLO_SUP_IZQ, true);
+			public static final Cuadro ESQUINA_ABIERTA_PARED_LADRILLO_INF_DER = new Cuadro(Sprite.ESQUINA_ABIERTA_PARED_LADRILLO_INF_DER, true);
+			public static final Cuadro ESQUINA_ABIERTA_PARED_LADRILLO_INF_IZQ = new Cuadro(Sprite.ESQUINA_ABIERTA_PARED_LADRILLO_INF_IZQ, true);
 		//FIN DEL CONJUNTO DE CUADROS DEL LABERINTO
 	//fin de la coleccion
 	public Cuadro(Sprite sprite){
 		this.sprite= sprite;
+		solido=false;
 	}
+	
+	public Cuadro(Sprite sprite, boolean solido){
+		this.sprite = sprite;
+		this.solido = solido;
+	}
+	
 	public void mostrar(int x, int y, Pantalla pantalla){
 		pantalla.mostrarCuadro(x << 5, y << 5, this);
 	}
 	
-	public boolean solido(){
-			return false;
+	public boolean esSolido(){
+			return solido;
 	}
 }
