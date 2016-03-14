@@ -7,7 +7,25 @@ public final class Sprite {
 	public int[] pixeles;
 	private HojaSprites hoja;
 	
-	//coleccion de sprites
+	//coleccion de sprite del jugador
+	public static final Sprite ABAJO0 = new Sprite(32, 0, 0, 0, HojaSprites.jugador);
+	public static final Sprite ABAJO1 = new Sprite(32, 0, 1, 0, HojaSprites.jugador);
+	public static final Sprite ABAJO2 = new Sprite(32, 0, 2, 0, HojaSprites.jugador);
+	
+	public static final Sprite ARRIBA0 = new Sprite(32, 1, 0, 0, HojaSprites.jugador);
+	public static final Sprite ARRIBA1 = new Sprite(32, 1, 1, 0, HojaSprites.jugador);
+	public static final Sprite ARRIBA2 = new Sprite(32, 1, 2, 0, HojaSprites.jugador);
+	
+	public static final Sprite DERECHA0 = new Sprite(32, 2, 0, 0, HojaSprites.jugador);
+	public static final Sprite DERECHA1 = new Sprite(32, 2, 1, 0, HojaSprites.jugador);
+	public static final Sprite DERECHA2 = new Sprite(32, 2, 2, 0, HojaSprites.jugador);
+	
+	public static final Sprite IZQUIERDA0 = new Sprite(32, 3, 0, 0, HojaSprites.jugador);
+	public static final Sprite IZQUIERDA1 = new Sprite(32, 3, 1, 0, HojaSprites.jugador);
+	public static final Sprite IZQUIERDA2 = new Sprite(32, 3, 2, 0, HojaSprites.jugador);
+	//fin de la coleccion
+	
+	//coleccion de sprites del mapa de desierto
 	public static final Sprite VACIO=new Sprite(32, 0);
 	public static final Sprite ASFALTO = new Sprite(32, 0, 0, 0, HojaSprites.desierto);
 	public static final Sprite ARENA = new Sprite(32, 1, 0, 0, HojaSprites.desierto);
@@ -21,17 +39,34 @@ public final class Sprite {
 	public static final Sprite PARED_PIEDRA_CARRETERAB = new Sprite(32, 0, 3, 1, HojaSprites.desierto);
 	public static final Sprite PUERTA_SUPERIOR_IZQUIERDA = new Sprite(32, 7, 0, 0, HojaSprites.desierto);
 	public static final Sprite PUERTA_INTERMEDIA_IZQUIERDA = new Sprite(32, 7, 1, 0, HojaSprites.desierto);
-	
 	public static final Sprite PUERTA_SUPERIOR_DERECHA = new Sprite(32, 7, 0, 1, HojaSprites.desierto);
 	public static final Sprite PUERTA_INTERMEDIA_DERECHA = new Sprite(32, 7, 1, 1, HojaSprites.desierto);
-	
 	public static final Sprite PUERTA_SUPERIOR = new Sprite(32, 8, 0, 0, HojaSprites.desierto);
-			
 	public static final Sprite PUERTA_INFERIOR = new Sprite(32, 1, 3, 0, HojaSprites.desierto);
 	public static final Sprite OXIDO = new Sprite(32, 9, 0, 0, HojaSprites.desierto);
-	//public static final Sprite PUERTA_SUPERIOR_CENTRAL = new Sprite(32, 0, 0, HojaSprites.desierto);
 	public static final Sprite VENTANA_PARED = new Sprite(32, 2, 3, 0, HojaSprites.desierto);
 	public static final Sprite PARED_SUPERIOR = new Sprite(32, 3, 3, 0, HojaSprites.desierto);
+	//fin de la coleccion
+	
+	//coleccion de sprites de laberinto
+	public static final Sprite PISO_LABERINTO = new Sprite(32, 0, 0, 0, HojaSprites.laberinto);
+	public static final Sprite PARED_LADRILLO_HORIZONTAL = new Sprite(32, 0, 1, 0, HojaSprites.laberinto);
+	public static final Sprite PARED_LADRILLO_HORIZONTAL_INVERTIDO = new Sprite(32, 0, 1, 0, HojaSprites.laberinto);
+	public static final Sprite PARED_LADRILLO_VERTICAL = new Sprite(32, 0, 1, 4, HojaSprites.laberinto);
+	public static final Sprite PARED_LADRILLO_VERTICAL_INVERTIDO = new Sprite(32, 0, 1, 0, HojaSprites.laberinto);
+	public static final Sprite PARED_LADRILLO_PISO_HORIZONTAL = new Sprite(32, 1, 1, 0, HojaSprites.laberinto);
+	public static final Sprite PARED_LADRILLO_PISO_HORIZONTAL_INVERTIDO = new Sprite(32, 1, 1, 3, HojaSprites.laberinto);
+	public static final Sprite PARED_LADRILLO_PISO_VERTICAL = new Sprite(32, 1, 2, 1, HojaSprites.laberinto);
+	public static final Sprite PARED_LADRILLO_PISO_VERTICAL_INVERTIDO = new Sprite(32, 1, 2, 0, HojaSprites.laberinto);
+	public static final Sprite ESQUINA_PARED_LADRILLO_PISO_SUP_IZQ = new Sprite(32, 1, 3, 1, HojaSprites.laberinto);
+	public static final Sprite ESQUINA_PARED_LADRILLO_PISO_SUP_DER = new Sprite(32, 1, 3, 0, HojaSprites.laberinto);
+	public static final Sprite ESQUINA_PARED_LADRILLO_PISO_INF_DER = new Sprite(32, 1, 3, 2, HojaSprites.laberinto);
+	public static final Sprite ESQUINA_PARED_LADRILLO_PISO_INF_IZQ = new Sprite(32, 1, 3, 3, HojaSprites.laberinto);
+	
+	public static final Sprite ESQUINA_ABIERTA_PARED_LADRILLO_SUP_DER = new Sprite(32, 2, 0, 0, HojaSprites.laberinto);
+	public static final Sprite ESQUINA_ABIERTA_PARED_LADRILLO_SUP_IZQ = new Sprite(32, 2, 0, 1, HojaSprites.laberinto);
+	public static final Sprite ESQUINA_ABIERTA_PARED_LADRILLO_INF_DER = new Sprite(32, 2, 0, 2, HojaSprites.laberinto);
+	public static final Sprite ESQUINA_ABIERTA_PARED_LADRILLO_INF_IZQ = new Sprite(32, 2, 0, 3, HojaSprites.laberinto);
 	//fin de la coleccion
 	
 	public int obtenLado(){
