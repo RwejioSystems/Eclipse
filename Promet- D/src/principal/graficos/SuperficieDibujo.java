@@ -43,5 +43,18 @@ public class SuperficieDibujo extends Canvas{
 		ge.dibujar(g);
 		Toolkit.getDefaultToolkit().sync();
 		g.dispose();
+		buffer.show();
+	}
+	
+	public Teclado obtenerTeclado(){
+		return teclado;
+	}
+	
+	public int obtenerAncho(){
+		return ancho;
+	}
+	
+	public int obtenerAlto(){
+		return alto;
 	}
 }

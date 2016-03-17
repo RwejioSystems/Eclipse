@@ -33,7 +33,7 @@ public class GestorPrincipal {
 	}
 	
 	private void inicializar() {
-		sd = new SuperficieDibujo();
+		sd = new SuperficieDibujo(ancho, alto);
 		ventana = new Ventana(titulo, sd);
 		ge = new GestorEstados();
 	}
@@ -78,10 +78,12 @@ public class GestorPrincipal {
 	}
 	
 	private void actualizar(){
-//		ge.actualizar();	
+		sd.obtenerTeclado().actualizar();
+		ge.actualizar();
 	}
 	private void dibujar(){
 //		ge.dibujar(g);
+		sd.dibujar(ge);
 	}
 	
 }
