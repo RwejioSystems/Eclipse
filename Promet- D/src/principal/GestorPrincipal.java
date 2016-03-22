@@ -1,5 +1,6 @@
  package principal;
 
+import principal.control.GestorControles;
 import principal.graficos.SuperficieDibujo;
 import principal.graficos.Ventana;
 import principal.maquinaestado.GestorEstados;
@@ -22,7 +23,7 @@ public class GestorPrincipal {
 	}
 	
 	public static void main(String [] args){
-		GestorPrincipal gp = new GestorPrincipal("Promet-D", 640, 360);
+		GestorPrincipal gp = new GestorPrincipal("Promet-D", Constantes.ANCHO_PANTALLA, Constantes.ALTO_PANTALLA);
 		gp.iniciarJuego();
 		gp.inicialBuclePrincipal();
 	}
@@ -61,6 +62,7 @@ public class GestorPrincipal {
 				actualizar();
 				delta--;
 				aps++;
+				Constantes.APS=aps;
 			}
 			dibujar();
 			fps++;
@@ -71,6 +73,7 @@ public class GestorPrincipal {
 //				CONTADOR_FPS= "FPS: "+fps;
 				System.out.println("APS: " + aps + "FPS: " + fps);
 				aps=0;
+				Constantes.APS=aps;
 				fps=0;
 				referenciaContador=System.nanoTime();
 			}
@@ -78,11 +81,9 @@ public class GestorPrincipal {
 	}
 	
 	private void actualizar(){
-		sd.obtenerTeclado().actualizar();
 		ge.actualizar();
 	}
 	private void dibujar(){
-//		ge.dibujar(g);
 		sd.dibujar(ge);
 	}
 	
